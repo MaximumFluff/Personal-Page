@@ -35,9 +35,12 @@
   <span>
     Published on 18/03/2026<br />
     
+    Last modified at 19/03/2026
+    
   </span>
   <p>Due to some regressions in COSMIC, I had moved back to KDE for some months, finding myself missing the tiling features but afraid of the potentially daunting task of configuring one. Turns out, getting a functional <a href="https://hypr.land">Hyprland</a> config wasn't the pain I thought it was.</p>
 <h2>The setup</h2>
+<hr />
 <p>Reading documentation is one of the most important skills a developer can have. There is no better test of this than reading the Hyprland wiki when installing. The base package itself does not come with everything one would want and there is a remarkable amount of choice that goes into customizing your Hyprland setup.</p>
 <p>Luckily, the wiki is one of the easiest to read I've seen to date and contains good examples of default configurations. Getting a functional setup took significantly less time than anticipated (I set aside an entire Sunday for this task, expecting pain and misery!)</p>
 <p>I went with Hyprpanel for my top bar (as it comes pretty full featured out of the box), Hyprpaper for wallpapers, Hyprlock for screen locking, Hypridle for handling automatic suspending, and Walker as the application launcher.</p>
@@ -76,7 +79,9 @@ yay -S &quot;${yayPackages[@]}&quot;
 </code></pre>
 
 <h2>Configuration and GNU Stow</h2>
+<hr />
 <h3>The config part</h3>
+<hr />
 <p>My current setup is running 95% default configuration options. Every part of Hyprland either comes with a default configuration or the wiki will have one that you can copy and paste. The only significant changes I've made is that I removed window rounding from window borders and added some keybinds I missed from COSMIC:</p>
 <pre class="codehilite"><code class="language-bash"># .config/hypr/hyprland.conf
 # Move active window left/right/up/down
@@ -89,13 +94,16 @@ bind = $mainMod, B, exec, $browser
 </code></pre>
 
 <h3>The GNU Stow part</h3>
+<hr />
 <p>GNU Stow is a fancy little program I've been using, that has been described as a "dotfile farm manager"</p>
 <p>The short explanation is this: I have all my config files in my home folder called "Dotfiles". Running the command <code>gnu stow .</code> in that directory generates symlinks to all those files inside my Home folder. So for example, after running that stow command, inside <code>/home/alex/.config/hypr/hyprland.conf</code> there will be a symlink that links to the file inside <code>/home/alex/Dotfiles/.config/hypr/hyprland.conf</code></p>
 <p>If you find my explanation lacking, you can <a href="https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html">read a better one from the blog of Brandon Invergo</a></p>
 <p>What this allows for me, is my dotfiles are now managed with Git, along with my install script. As part of the script, my dotfiles are copied over and stowed after package installation. When installing Arch on my laptop, I had my setup ready to go within minutes of the OS install finishing.</p>
 <h3>The actual dotfiles</h3>
+<hr />
 <p>You can browse my dotfiles <a href="https://github.com/MaximumFluff/dotfiles">over here on GitHub</a> to get a better idea of my setup.</p>
 <h2>The experience</h2>
+<hr />
 <p>Good lord, and I thought COSMIC was smooth! Hyprland is lightning fast, quite lightweight and customizable to an almost infinite amount! Within an hour of using it I knew it was going to be my daily driver. I can tell why customizing and posting Hyprland configurations to Reddit has become such a popular pasttime.</p>
 <p>I'm truly glad I got over my dotfile phobia and dove into it. For any developer and/or fan of keyboard shortcuts, you need to give it a try!</p>
 </article>
